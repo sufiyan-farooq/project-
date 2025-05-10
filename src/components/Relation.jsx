@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import teammember from "../assets/teammember.jpeg";
- 
+import 'aos/dist/aos.css';
+
 import { Container } from '@mui/material';
+import Aos from "aos";
 
 export default function Relation() {
+  useEffect(() => {
+    Aos.init({
+      duration: 1500, 
+      easing: 'ease-in-out-sine', 
+      once: true, 
+    });
+  }, []);
+
   return (
     <section
       style={{ margin: "0px auto" }}
@@ -12,7 +22,7 @@ export default function Relation() {
       <Container>
         <div className="max-w-7xl mx-auto w-full items-center flex flex-col gap-16 md:gap-10 md:flex-col lg:flex-row">
           {/* Left Text Content */}
-          <div className="flex-1 text-center lg:text-left">
+          <div className="flex-1 text-center lg:text-left" data-aos="fade-up">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
             Shift the relationship with your frontline
             </h1>
@@ -22,7 +32,7 @@ export default function Relation() {
           </div>
 
           {/* Right Image */}
-          <div className="flex-1 mt-6 md:mt-0">
+          <div className="flex-1 mt-6 md:mt-0" data-aos="zoom-in">
             <img
               src={teammember}
               alt="Hero"

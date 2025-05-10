@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Grid, Typography, Card, CardContent, Box, Avatar } from '@mui/material';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import ChatIcon from '@mui/icons-material/Chat';
@@ -6,6 +6,9 @@ import WorkIcon from '@mui/icons-material/Work';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import GroupIcon from '@mui/icons-material/Group';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const iconMap = {
   'Forms Management': <AssignmentIcon />,
@@ -26,32 +29,59 @@ const features = [
 ];
 
 const FeaturesSection = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1500, // Longer smooth timing
+      easing: 'ease-in-out-sine', // Extra smooth easing
+      once: true,
+    });
+  }, []);
+
   return (
     <Box sx={{ backgroundColor: '#f9f9f9', py: 8, marginTop: '60px' }}>
       <Container maxWidth="lg">
-        <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-900 leading-tight mb-6">
+        <h1
+          className="text-4xl md:text-5xl font-bold text-center text-gray-900 leading-tight mb-6"
+          data-aos="fade-up"
+        >
           All-in-One Safety & Compliance Tools
         </h1>
         <Grid container spacing={3} sx={{ mt: 10, display: 'flex', justifyContent: 'center' }}>
           {features.map((feature, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-         <Card
-  sx={{
-    height: '100%',
-    borderRadius: 3,
-    border: '1px solid white',
-    cursor: 'pointer',
-    transition: 'all 0.4s ease-in-out', 
-    '&:hover': {
-      border: `1px solid ${feature.color}`, 
-      boxShadow: 2, 
-    },
-  }}
->
-
-                <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', px: 4 , width:"100"}}>
-                  <Avatar sx={{ color: feature.color,mb: 2, bgcolor:"white"  }}>
-                    {iconMap   [feature.title]   }
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={4}
+              key={index}
+              data-aos="zoom-in"
+              data-aos-delay={index * 150} // Soft staggered delay
+            >
+              <Card
+                sx={{
+                  height: '100%',
+                  borderRadius: 3,
+                  border: '1px solid white',
+                  cursor: 'pointer',
+                  transition: 'transform 0.5s ease, box-shadow 0.5s ease, border 0.5s ease', // Smooth hover
+                  '&:hover': {
+                    border: `1px solid ${feature.color}`,
+                    boxShadow: 6,
+                    transform: 'scale(1.04)', // Slight soft zoom
+                  },
+                }}
+              >
+                <CardContent
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    px: 4,
+                    width: '100%',
+                  }}
+                >
+                  <Avatar sx={{ color: feature.color, mb: 2, bgcolor: 'white' }}>
+                    {iconMap[feature.title]}
                   </Avatar>
                   <Typography variant="h5" gutterBottom align="center" sx={{ fontWeight: 'bold' }}>
                     {feature.title}

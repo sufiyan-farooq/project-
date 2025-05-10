@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
@@ -10,53 +10,80 @@ import BuildIcon from '@mui/icons-material/Build';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import WarningIcon from '@mui/icons-material/Warning';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import { Container } from '@mui/material';
+import { Container, Box, Typography } from '@mui/material';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: '#ffffff', 
+  backgroundColor: '#ffffff',
   ...theme.typography.body2,
-  padding: theme.spacing(2),
+  padding: theme.spacing(4),
   textAlign: 'center',
   color: theme.palette.text.secondary,
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center', 
-  justifyContent: 'center', 
+  alignItems: 'center',
+  justifyContent: 'center',
+  borderRadius: 16,
+  boxShadow: 'none', // Shadow hata diya
+  border: 'none',    // Border hata diya
+  cursor: 'default', // Hover effect hata diya
 }));
 
 const SafetyForms = () => {
-  const features = [
-    { label: 'Sign In / Sign Out', icon: AssignmentIcon, color: '#00a859'},
-    { label: 'Company Induction', icon: BusinessIcon ,color: '#0073ce'},
-    { label: 'Toolbox Meeting', icon: BuildIcon, color: '#00a859'},
-    { label: 'Daily Hazard', icon: WarningIcon , color: '#0073ce' },
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      easing: 'ease-in-out-sine',
+      once: true,
+    });
+  }, []);
 
-    { label: 'Incident Report', icon: ReportProblemIcon , color: '#00a859'},
-    { label: 'Task Card', icon: TaskAltIcon,color: '#0073ce' },
-    { label: 'Site Inspection', icon: VisibilityIcon ,color: '#00a859' },
-    { label: 'and more...', icon: MoreHorizIcon , color: '#0073ce' },
+  const features = [
+    { label: 'Sign In / Sign Out', icon: AssignmentIcon, color: '#00a859' },
+    { label: 'Company Induction', icon: BusinessIcon, color: '#0073ce' },
+    { label: 'Toolbox Meeting', icon: BuildIcon, color: '#00a859' },
+    { label: 'Daily Hazard', icon: WarningIcon, color: '#0073ce' },
+    { label: 'Incident Report', icon: ReportProblemIcon, color: '#00a859' },
+    { label: 'Task Card', icon: TaskAltIcon, color: '#0073ce' },
+    { label: 'Site Inspection', icon: VisibilityIcon, color: '#00a859' },
+    { label: 'and more...', icon: MoreHorizIcon, color: '#0073ce' },
   ];
 
   return (
-    <div style={{backgroundColor: '#f9f9f9'}} className=" py-8">
+    <Box sx={{ backgroundColor: '#f9f9f9', py: 8 }}>
       <Container maxWidth="lg">
-        <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-900 leading-tight mb-6">
+        <h1
+          className="text-4xl md:text-5xl font-bold text-center text-gray-900 leading-tight mb-6"
+          data-aos="fade-up"
+        >
           Safety Forms Available
         </h1>
-        <div className="p-8 bg-white mt-10"> 
-          <Grid container spacing={2} sx={{display:"flex",justifyContent:"space-around"}}>
+        <Box sx={{ p: 4, backgroundColor: 'white', mt: 10, borderRadius: 4 }}>
+          <Grid container spacing={3} justifyContent="center">
             {features.map((feature, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index} sx={{ padding:"15px" , marginLeft:"10px"}}>
-               
-               <feature.icon sx={{ fontSize: 30, color: feature.color, mb: 1 }} />
-               <span className="text-lg font-medium text-gray-700 ml-6">{feature.label}</span>
-           
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={3}
+                key={index}
+                data-aos="zoom-in"
+                data-aos-delay={index * 100}
+              >
+                <Item>
+                  <feature.icon sx={{ fontSize: 40, color: feature.color, mb: 2 }} />
+                  <Typography variant="h6" sx={{ fontWeight: 600, color: '#333' }}>
+                    {feature.label}
+                  </Typography>
+                </Item>
               </Grid>
             ))}
           </Grid>
-        </div>
+        </Box>
       </Container>
-    </div>
+    </Box>
   );
 };
 

@@ -1,5 +1,5 @@
 import { Box, Button, Container } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 
 import FlashOnIcon from "@mui/icons-material/FlashOn";
@@ -7,7 +7,18 @@ import DescriptionIcon from "@mui/icons-material/Description";
 import SecurityIcon from "@mui/icons-material/Security";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import ReportProblemIcon from "@mui/icons-material/ReportProblem";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 export const Improvement = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1500, 
+      easing: 'ease-in-out', 
+      once: true, 
+    });
+  }, []);
+
+
     const solutions = [
         { icon: <DescriptionIcon className="text-[#0073ce]" />, text: "Go paperless" },
         { icon: <FlashOnIcon className="text-[#0073ce]" />, text: "Boost productivity" },
@@ -21,7 +32,8 @@ export const Improvement = () => {
     <>
     <div style={{  padding:"30px"}} className=' mt-20'  >
       <Container >
-        <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-900 leading-tight mb-6">
+        <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-900 leading-tight mb-6" data-aos="zoom-in"
+             >
         Start your improvement movement        </h1>
         </Container>
 <div className="py-10  overflow-hidden">
@@ -77,12 +89,14 @@ export const Improvement = () => {
 
 </div>
       
-<Box sx={{ 
+<Box data-aos="fade-in"
+              sx={{ 
             display: "flex", 
             gap: 2, 
             flexWrap: "wrap", 
             justifyContent:"center",
             paddingTop:"40px"
+            
           }}>
             <Button
               variant="contained"
