@@ -1,8 +1,9 @@
 import React from "react";
-import usingmobile from "../assets/usingmobile.webp"; 
+import teammember from "../assets/teammember.jpeg";
+ 
 import { Container } from '@mui/material';
 
-export default function Streamline() {
+export default function Relation() {
   return (
     <section
       style={{ margin: "0px auto" }}
@@ -13,20 +14,17 @@ export default function Streamline() {
           {/* Left Text Content */}
           <div className="flex-1 text-center lg:text-left">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
-              Streamline operations <br />
-              the paperless way
+            Shift the relationship with your frontline
             </h1>
             <p className="text-gray-600 text-base md:text-lg mb-6">
-              Your operation isn’t static and stale. It’s time to adopt a digital solution that makes change easy. Digitize any process, automate workflows, capture consistent data, and start identifying areas of improvement from the ground up.
-            
-              It’s the power of knowing what’s working, what’s not, and giving everyone the tools to do something about it.
+            With SafetyCulture in the hands of your teams, every person, at every level, can play an active role in improving quality, safety and compliance. Give them the tools they need to be successful in their role, however unique it may be, and empower every individual to have a voice.
             </p>
           </div>
 
           {/* Right Image */}
           <div className="flex-1 mt-6 md:mt-0">
             <img
-              src={usingmobile}
+              src={teammember}
               alt="Hero"
               className="rounded-2xl w-110 h-110 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-cover mx-auto"
             />

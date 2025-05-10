@@ -87,17 +87,47 @@ const Navbar = () => {
           <List>
             {navItems.map((item) => (
               <ListItem button key={item}>
-                <ListItemText primary={item} />
+                <ListItemText primary={item}
+                      key={item}
+                      sx={{
+                        color: 'black',
+                        fontWeight: 550,
+                        borderBottom: '2px solid transparent',
+                        borderRadius: 0,
+                        cursor:"pointer",
+    
+                        paddingBottom: '6px',
+                        paddingTop:"4px", 
+                        '&:hover': {
+                          color: '#00a859',
+                          fontWeight: 600,
+                          borderBottom: '2px solid #00a859',
+                          backgroundColor: 'transparent',
+                        }
+                      }}
+                 />
               </ListItem>
             ))}
             <ListItem button>
-              <Button
-                variant="outlined"
-                fullWidth
-                sx={{ borderColor: '#0073ce', color: '#0073ce' }}
-              >
-                Log In
-              </Button>
+            <Button variant="outlined"
+                            fullWidth
+
+              sx={{
+              
+              border: "2px solid #0073ce",
+              transition: "all 0.3s ease",
+              '&:hover': {
+                backgroundColor: '#0073ce',
+                border: "2px solid #0073ce",
+                color: 'white',
+
+
+                transform: "scale(1.05)"
+              }
+            }}>
+              Log In
+          
+            </Button>
             </ListItem>
             <ListItem button>
               <Button

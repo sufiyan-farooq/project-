@@ -8,6 +8,11 @@ import FeaturesSection from './components/FeaturesSection'
 import SafetyForms from './components/SafetyForm'
 import Streamline from './components/Streamline'
 import Descion from './components/Descion'
+import Relation from './components/Relation'
+import { Pricing } from './components/Pricing'
+import { IndustrySolution } from './components/IndustrySolution'
+import { Improvement } from './components/Improvement'
+import { Footer } from './components/Footer'
 
 function App() {
 
@@ -19,6 +24,11 @@ function App() {
       <SafetyForms /> 
       <Streamline/>
       <Descion/>
+      <Relation/>
+      <Pricing/>
+      <IndustrySolution/>
+      <Improvement/>
+      <Footer/>
 
     </>
   )
