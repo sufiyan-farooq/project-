@@ -70,7 +70,7 @@ const FeaturesSection = () => {
               <Card
                 sx={{
                   width: '100%', 
-                  height: '100%',
+                  height: '220px',
                   borderRadius: 3,
                   border: '1px solid white',
                   cursor: 'pointer',
