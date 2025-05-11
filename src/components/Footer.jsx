@@ -62,11 +62,11 @@ import {
         <div className="border-t text-xs border-gray-200 py-4 px-4 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto">
           <div className="space-x-2 mb-2 md:mb-0 text-gray-500">
             <span>Status</span> | 
-            <span>Legal</span> | 
-            <span>Terms and Conditions</span> | 
-            <span>Privacy Portal</span> | 
-            <span>Security</span> | 
-            <span>© 2025</span>
+            <span className='ml-2'>Legal</span> | 
+            <span className='ml-2' >Terms and Conditions</span> | 
+            <span className='ml-2' >Privacy Portal</span> | 
+            <span className='ml-2' >Security</span> | 
+            <span className='ml-2' >© 2025</span>
           </div>
           <div className="flex space-x-3 text-gray-600 ">
             <a href="#" className='hover:text-[#00a859]'><Twitter fontSize="small" /></a>
