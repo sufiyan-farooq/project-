@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
@@ -11,8 +12,37 @@ import { IndustrySolution } from './components/IndustrySolution';
 import { Improvement } from './components/Improvement';
 import { PricingSec } from './pages/PricingSec';
 import Footer from './components/Footer';
+import { CircularProgress } from '@mui/material';
+
+// Simple Loader Component
+const Loader = () => {
+  return (
+    <div style={{
+      height: "100vh",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      fontSize: "24px"
+    }}>
+<CircularProgress color="success" />
+</div>
+  );
+};
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading for 2 seconds
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <Router>
       <Navbar />
@@ -28,7 +58,7 @@ function App() {
             <Pricing />
             <IndustrySolution />
             <Improvement />
-            <Footer/>
+            <Footer />
           </>
         } />
         <Route path="/pricing" element={<PricingSec />} />
