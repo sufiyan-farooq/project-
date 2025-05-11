@@ -26,9 +26,9 @@ const Item = styled(Paper)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   borderRadius: 16,
-  boxShadow: 'none', // Shadow hata diya
-  border: 'none',    // Border hata diya
-  cursor: 'default', // Hover effect hata diya
+  boxShadow: 'none', 
+  border: 'none',    
+  cursor: 'default', 
 }));
 
 const SafetyForms = () => {

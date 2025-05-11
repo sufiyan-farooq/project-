@@ -48,7 +48,7 @@ export const Pricing = () => {
         >
           <div
             className="rounded-3xl rounded-t-3xl bg-white/60 p-8 ring-1 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-10 lg:mx-0 lg:rounded-tr-none lg:rounded-bl-3xl"
-            data-aos="fade-right"
+            data-aos="fade-up"
             data-aos-duration="1500"
           >
             {/* Free Plan Content */}
@@ -145,7 +145,7 @@ export const Pricing = () => {
 
           <div
             className="relative rounded-3xl bg-gray-900 p-8 shadow-2xl ring-1 ring-gray-900/10 sm:p-10"
-            data-aos="fade-left"
+            data-aos="fade-in"
             data-aos-duration="1500"
           >
             {/* Premium Plan Content */}

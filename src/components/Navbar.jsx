@@ -40,8 +40,7 @@ const Navbar = () => {
                     fontWeight: 550,
                     borderBottom: '2px solid transparent',
                     borderRadius: 0,
-                    paddingBottom: '20px',
-                    paddingTop: "20px",
+                   
                     '&:hover': {
                       color: '#00a859',
                       fontWeight: 600,

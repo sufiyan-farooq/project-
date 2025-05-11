@@ -9,8 +9,8 @@ import Relation from './components/Relation';
 import { Pricing } from './components/Pricing';
 import { IndustrySolution } from './components/IndustrySolution';
 import { Improvement } from './components/Improvement';
-import { Footer } from './components/Footer';
 import { PricingSec } from './pages/PricingSec';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
             <Pricing />
             <IndustrySolution />
             <Improvement />
-            <Footer />
+            <Footer/>
           </>
         } />
         <Route path="/pricing" element={<PricingSec />} />
